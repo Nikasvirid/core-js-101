@@ -18,7 +18,7 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
- function concatenateStrings(value1, value2) {
+function concatenateStrings(value1, value2) {
   const st = '';
   return st.concat(value1, value2);
 }

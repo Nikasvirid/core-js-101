@@ -70,7 +70,7 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints( x1, y1, x2, y2) {
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
   const a = x1 - x2;
   const b = y1 - y2;
   const c = Math.sqrt(a * a + b * b);

@@ -534,10 +534,18 @@ function distinct(arr) {
  *   }
  */
 function group(array, keySelector, valueSelector) {
-  return (group);
+  const result = new Map();
+  array.map((el, i) => {
+    const key = keySelector(array[i]);
+    if (result.has(key)) {
+      result.get(key).push(valueSelector(array[i]));
+    } else {
+      result.set(key, [valueSelector(array[i])]);
+    }
+    return el;
+  });
+  return result;
 }
-
-
 /**
  * Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
@@ -597,7 +605,22 @@ function getElementByIndexes(arr, indexes) {
  *
  */
 function swapHeadAndTail(arr) {
-  throw new Error('Not implemented');
+  const arrLength = arr.length;
+  const halfLength = Math.floor(arrLength / 2);
+  const head = arr.slice(0, halfLength);
+  const tail = arr.slice(-halfLength);
+  let result = [];
+
+  if (arr.length < 2) {
+    return arr;
+  }
+  if (arrLength % 2 === 0) {
+    result = [...tail, ...head];
+  } else {
+    const middleElement = arr[halfLength];
+    result = [...tail, middleElement, ...head];
+  }
+  return result;
 }
 
 
